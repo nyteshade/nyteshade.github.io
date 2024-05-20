@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body > section[id] {
+        margin-bottom: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="target1">
+      <b>Levels - No label - Signal Aspect</b><br>
+    </section>
+
+    <section id="target2">
+      <b>Levels - Preset Label - Signal Aspect</b><br>
+    </section>
+
+    <hr>
+
+    <section id="target3">
+      <b>Levels - No label - No Background</b><br>
+    </section>
+
+    <section id="target4">
+      <b>Levels - Preset Label - No Background</b><br>
+    </section>
+
+    <hr>
+
+    <section id="target5">
+      <b>Levels - Solid - No label</b><br>
+    </section>
+
+    <section id="target6">
+      <b>Levels - Solid - Preset Label</b><br>
+    </section>
+
+    <section id="target7">
+      <b>Levels - Solid - Preset Label - Signal Aspect</b><br>
+    </section>
+
+
+    <script type="module">
+      const cdn = 'https://cdn.jsdelivr.net';
+      const bundlePath = '/gh/nyteshade/ne-html/dist/@nejs';
+      const url = new URL(`${bundlePath}/html.bundle.latest.js`, cdn);
+      console.log(url.href);
+      const {HTML, commands, Levels} = await import(url.href);
+
+      Object.assign(globalThis, { HTML, commands, Levels });
+    </script>
+  </body>
+</html>
